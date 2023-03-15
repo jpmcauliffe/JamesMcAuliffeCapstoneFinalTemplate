@@ -13,6 +13,7 @@ class ProfileForm(FlaskForm):
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
     submit = SubmitField('Post')
+    role = SelectField('Role for the user',choices=[("Current Student","Current Student"),("Current Staff","Current Staff"),("Student Alumni","Student Alumni"),("Staff Alumni","Staff Alumni")])
 
 class BlogForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])
