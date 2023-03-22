@@ -14,6 +14,20 @@ class ProfileForm(FlaskForm):
     image = FileField("Image") 
     submit = SubmitField('Post')
     role = SelectField('Role for the user',choices=[("Current Student","Current Student"),("Current Staff","Current Staff"),("Student Alumni","Student Alumni"),("Staff Alumni","Staff Alumni")])
+    phonenum = StringField('Phone Number', validators=[DataRequired()])
+
+class AlumniForm(FlaskForm):
+    alfname = StringField('First Name', validators=[DataRequired()])
+    allname = StringField('Last Name', validators=[DataRequired()])
+    algradyear = IntegerField('Grad Year', validators=[DataRequired()])
+    alpathway = SelectField('OT Pathway',choices=[("Computer Science","Computer Science"),("Engineering","Engineering"),("FADA","FADA"),("RPL","RPL"),("Health","Health")])
+    alsex = SelectField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
+    alphonenum = IntegerField('Phone Number')
+    alemail = StringField('Email')
+    alimage = FileField('Profile Photo')
+    allocation = StringField('City of Residence')
+    aloccupation = StringField('Current Occupation')
+    submit = SubmitField('Submit')
 
 class BlogForm(FlaskForm):
     subject = StringField('Subject', validators=[DataRequired()])

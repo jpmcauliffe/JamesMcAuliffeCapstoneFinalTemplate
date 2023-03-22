@@ -33,11 +33,23 @@ class User(UserMixin, Document):
     image = FileField()
     prononuns = StringField()
     role = StringField()
-    phonenum = ()
+    phonenum = IntField()
 
     meta = {
         'ordering': ['lname','fname']
     }
+
+class Alumni(Document):
+    alfname = StringField()
+    allname = StringField()
+    algradyear = IntField()
+    alpathway = StringField('Pathway',choices=[("Computer Science","Computer Science"),("Engineering","Engineering"),("FADA","FADA"),("RPL","RPL"),("Health","Health"),("Other","Other")])
+    alsex = StringField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
+    alphonenum = IntField()
+    alemail = StringField()
+    alimage = FileField()
+    allocation = StringField()
+    aloccupation = StringField()
     
 class Blog(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 

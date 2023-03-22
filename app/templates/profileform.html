@@ -42,6 +42,14 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+
+        <p>
+            {{ form.phonenum.label }}<br>
+            {{ form.phonenum() }}<br>
+            {% for error in form.phonenum.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
     </form>
 
 {% endblock %}
