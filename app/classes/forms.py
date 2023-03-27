@@ -20,6 +20,8 @@ class AlumniForm(FlaskForm):
     alfname = StringField('First Name', validators=[DataRequired()])
     allname = StringField('Last Name', validators=[DataRequired()])
     algradyear = IntegerField('Grad Year', validators=[DataRequired()])
+    alcollege = StringField('College you attend(ed)')
+    almajor = StringField('Your college major')
     alpathway = SelectField('OT Pathway',choices=[("Computer Science","Computer Science"),("Engineering","Engineering"),("FADA","FADA"),("RPL","RPL"),("Health","Health")])
     alsex = SelectField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
     alphonenum = IntegerField('Phone Number')
@@ -27,6 +29,17 @@ class AlumniForm(FlaskForm):
     alimage = FileField('Profile Photo')
     allocation = StringField('City of Residence')
     aloccupation = StringField('Current Occupation')
+    submit = SubmitField('Submit')
+
+class CurrentStudentForm(FlaskForm):
+    csfname = StringField('First Name', validators=[DataRequired()])
+    cslname = StringField('Last Name', validators=[DataRequired()])
+    cstechgradyear = IntegerField('Tech Grad Year', validators=[DataRequired()])
+    cspathway = SelectField('OT Pathway',choices=[("Computer Science","Computer Science"),("Engineering","Engineering"),("FADA","FADA"),("RPL","RPL"),("Health","Health")])
+    cssex = SelectField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
+    csphonenum = IntegerField('Phone Number')
+    csemail = StringField('Email')
+    csimage = FileField('Profile Photo')
     submit = SubmitField('Submit')
 
 class BlogForm(FlaskForm):

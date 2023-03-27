@@ -50,6 +50,25 @@ class Alumni(Document):
     alimage = FileField()
     allocation = StringField()
     aloccupation = StringField()
+    alcollege = StringField()
+    almajor = StringField()
+    
+    meta = {
+        'ordering': ['algradyear','allname','alfname']
+    }
+    
+class CurrentStudent(Document):
+    csfname = StringField()
+    cslname = StringField()
+    cstechgradyear = IntField()
+    cspathway = StringField('OT Pathway',choices=[("Computer Science","Computer Science"),("Engineering","Engineering"),("FADA","FADA"),("RPL","RPL"),("Health","Health")])
+    cssex = StringField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
+    csphonenum = IntField('Phone Number')
+    csemail = StringField('Email')
+    
+    meta = {
+        'ordering': ['cstechgradyear','cslname','csfname']
+    }
     
 class Blog(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
