@@ -22,6 +22,7 @@ from time import time
 from bson.objectid import ObjectId
 
 class User(UserMixin, Document):
+# USER FIELDS
     createdate = DateTimeField(defaultdefault=dt.datetime.utcnow)
     gid = StringField(sparse=True, unique=True)
     gname = StringField()
@@ -34,12 +35,7 @@ class User(UserMixin, Document):
     prononuns = StringField()
     role = StringField()
     phonenum = IntField()
-
-    meta = {
-        'ordering': ['lname','fname']
-    }
-
-class Alumni(Document):
+# ALUMNI FIELDS
     alfname = StringField()
     allname = StringField()
     algradyear = IntField()
@@ -52,12 +48,7 @@ class Alumni(Document):
     aloccupation = StringField()
     alcollege = StringField()
     almajor = StringField()
-    
-    meta = {
-        'ordering': ['algradyear','allname','alfname']
-    }
-    
-class CurrentStudent(Document):
+# STUDENT FIELDS
     csfname = StringField()
     cslname = StringField()
     cstechgradyear = IntField()
@@ -65,10 +56,6 @@ class CurrentStudent(Document):
     cssex = StringField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
     csphonenum = IntField('Phone Number')
     csemail = StringField('Email')
-    
-    meta = {
-        'ordering': ['cstechgradyear','cslname','csfname']
-    }
     
 class Blog(Document):
     author = ReferenceField('User',reverse_delete_rule=CASCADE) 
