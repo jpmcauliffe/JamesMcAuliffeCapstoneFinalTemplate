@@ -21,16 +21,6 @@
             {% endfor %}
         </p>
             
-        <p>{{ form.submit() }}</p>
-
-        <p>
-            {{ form.role.label }}<br>
-            {{ form.role() }}<br>
-            {% for error in form.role.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-
         <p>
             {{ form.alphonenum.label }}<br>
             {{ form.alphonenum() }}<br>
@@ -38,6 +28,51 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+        <p>
+            {{ form.alpathway.label }}<br>
+            {{ form.alpathway() }}<br>
+            {% for error in form.alpathway.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.algradyear.label }}<br>
+            {{ form.algradyear() }}<br>
+            {% for error in form.algradyear.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.alcollege.label }}<br>
+            {{ form.alcollege() }}<br>
+            {% for error in form.alcollege.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.aloccupation.label }}<br>
+            {{ form.aloccupation() }}<br>
+            {% for error in form.aloccupation.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.allocation.label }}<br>
+            {{ form.allocation() }}<br>
+            {% for error in form.allocation.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.almajor.label }}<br>
+            {{ form.almajor() }}<br>
+            {% for error in form.almajor.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        
+        <p>{{ form.submit() }}</p>
+
     </form>
 
 {% endblock %}
