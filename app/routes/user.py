@@ -28,7 +28,7 @@ def alumniEdit():
             algradyear = form.algradyear.data,
             alcollege = form.alcollege.data,
             almajor = form.almajor.data,
-            alpathway = form.alpathway.data,
+            #alpathway = form.alpathway.data,
             alsex = form.alsex.data,
             alphonenum = form.alphonenum.data,
             alemail = form.alemail.data,
@@ -45,16 +45,16 @@ def alumniEdit():
         # Then sends the user to their profle page
         return redirect(url_for('myProfile'))
     
-    form.alfname.data = current_user.allname,
-    form.allname.data = current_user.allname,
-    form.algradyear.data = current_user.algradyear,
-    form.alcollege.data = current_user.alcollege,
-    form.almajor.data = current_user.almajor,
-    form.alpathway.data = current_user.alpathway,
-    form.alsex.data = current_user.alsex,
-    form.alphonenum.data = current_user.alphonenum,
-    form.alemail.data = current_user.alemail,
-    form.allocation.data = current_user.allocation,
+    form.alfname.data = current_user.allname
+    form.allname.data = current_user.allname
+    form.algradyear.data = current_user.algradyear
+    form.alcollege.data = current_user.alcollege
+    form.almajor.data = current_user.almajor
+    form.alpathway.data = current_user.alpathway
+    form.alsex.data = current_user.alsex
+    form.alphonenum.data = current_user.alphonenum
+    form.alemail.data = current_user.alemail
+    form.allocation.data = current_user.allocation
     form.aloccupation.data = current_user.aloccupation
     return render_template('alumniform.html', form=form)
         
