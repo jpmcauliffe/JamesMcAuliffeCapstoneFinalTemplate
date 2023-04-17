@@ -28,24 +28,18 @@ def alumniEdit():
             algradyear = form.algradyear.data,
             alcollege = form.alcollege.data,
             almajor = form.almajor.data,
-            #alpathway = form.alpathway.data,
+            alpathway = form.alpathway.data,
             alsex = form.alsex.data,
             alphonenum = form.alphonenum.data,
             alemail = form.alemail.data,
             allocation = form.allocation.data,
             aloccupation = form.aloccupation.data
         )
-        # This updates the profile image
-        if form.image.data:
-            if currUser.image:
-                currUser.image.delete()
-            currUser.image.put(form.image.data, content_type = 'image/jpeg')
-            # This saves all the updates
-            currUser.save()
+
         # Then sends the user to their profle page
         return redirect(url_for('myProfile'))
     
-    form.alfname.data = current_user.allname
+    form.alfname.data = current_user.alfname
     form.allname.data = current_user.allname
     form.algradyear.data = current_user.algradyear
     form.alcollege.data = current_user.alcollege

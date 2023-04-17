@@ -26,7 +26,6 @@ class AlumniForm(FlaskForm):
     alsex = SelectField('Sex',choices=[("Male","Male"),("Female","Female"),("Other","Other"),("Prefer not to say","Prefer not to say")])
     alphonenum = IntegerField('Phone Number')
     alemail = StringField('Email')
-    alimage = FileField('Profile Photo')
     allocation = StringField('City of Residence')
     aloccupation = StringField('Current Occupation')
     submit = SubmitField('Submit')
